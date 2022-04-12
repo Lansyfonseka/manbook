@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd server
-    - run: ls
     - run: npm i
-    - run: node index.js
+    - run: npm install --prefix ./my-app react
+    - run: ls
+    - run: node server index.js
