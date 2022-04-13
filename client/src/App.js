@@ -1,14 +1,30 @@
 import './App.css';
 import Axios from 'axios';
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
+import { AuthPage } from './pages/AuthPage/AuthPage';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import { UsersPage } from './pages/Users/UsersPage';
+
 
 function App() {
-   Axios.get('api/get').then((data)=>{
-    console.log(data.data)
-});
+//    Axios.get('api/get').then((data)=>{
+//     console.log(data.data)
+// });
   return (
-    <div className="App">
-      Hellow world!
-    </div>
+    <><div className="App"></div>
+    <BrowserRouter>
+      <Link to="/">Main</Link>|
+      <Link to="auth">Login</Link>|
+      <Link to="register">Register</Link>|
+      <Link to="users">Users</Link>
+      <Routes>
+        <Route path="/" element={<h1>Main page</h1>} />
+        <Route path="auth" element={<AuthPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="users" element={<UsersPage />} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
