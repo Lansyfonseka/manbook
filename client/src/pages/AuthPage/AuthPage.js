@@ -2,6 +2,7 @@ import React from "react";
 import "./AuthPage.scss";
 
 export const AuthPage = () => {
+  console.log('Auth page')
   return (
     <>
       <div className="login">

@@ -1,15 +1,11 @@
 import './App.css';
-import Axios from 'axios';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import { AuthPage } from './pages/AuthPage/AuthPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 import { UsersPage } from './pages/Users/UsersPage';
 
-
 function App() {
-//    Axios.get('api/get').then((data)=>{
-//     console.log(data.data)
-// });
+console.log('App');
   return (
     <><div className="App"></div>
     <BrowserRouter>
