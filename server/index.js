@@ -24,8 +24,22 @@ database.connect(function(err) {
 app.get("/api/get", (req,res)=>{
   database.query("SELECT * FROM users", (err,result)=>{
     if(err) console.log(err);
-  res.send(result)
+    res.send(result)
   });   
+});
+
+app.post("/api/register", (req,res)=>{
+  const {userName,userMail,userPassword} = req.body;
+  database.query("INSERT INTO users (user_name,user_mail,user_password) values (?,?,?)",[userName,userMail,userPassword])
+});
+
+app.post('/api/login', (req,res)=> {
+  const {userMail,userPassword} = req.body;
+  database.query('SELECT * FROM users where user_mail = ?',userMail,(err,result)=>{
+    if(err) console.log(err);
+    const {user_name,user_mail,user_id} = result[0];
+    res.send({user_name,user_mail,user_id});
+  });  
 });
 
 app.listen(PORT, () => {

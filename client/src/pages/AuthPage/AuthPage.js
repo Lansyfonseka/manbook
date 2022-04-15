@@ -1,8 +1,25 @@
-import React from "react";
+import  Axios from "axios";
+import React, {useState,useContext} from "react";
+import {useNavigate} from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
 import "./AuthPage.scss";
 
 export const AuthPage = () => {
-  console.log('Auth page')
+  const [mail,setMail] = useState('');
+  const [password,setPassword] = useState('');
+  let {userName,userMail,userId,userIsAuthenticated} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const checkUser = async () => {
+    Axios.post('api/login',{userMail:mail,userPassword:password}).then(data=> {
+        userName = data.data.user_name;
+        userMail = data.data.user_mail;
+        userId = data.data.user_id;
+        userIsAuthenticated = true;
+        navigate('/users');
+    });
+  }
+
   return (
     <>
       <div className="login">
@@ -14,6 +31,7 @@ export const AuthPage = () => {
               id="email"
               type="text"
               name="email"
+              onChange={e=>setMail(e.target.value)}
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -23,11 +41,12 @@ export const AuthPage = () => {
               id="password"
               type="password"
               name="password"
+              onChange={e=>setPassword(e.target.value)}
             />
             <label htmlFor="password">Password</label>
           </div>
         </div>
-        <button className="login__button">Register</button>
+        <button className="login__button" onClick={checkUser}>Login</button>
       </div>
     </>
   )
