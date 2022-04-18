@@ -1,0 +1,41 @@
+.header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #282c34;
+  color: #ffffff;
+  font-size: 20px;
+  a {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  .logo {
+    width: 250px;
+    height: 40px;
+    background-image: url('../../icons/manbook.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__register {
+    margin-left: 20px;
+    border: 1px white solid;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 200ms ease;
+    &:hover {
+      box-shadow: 0 0 10px #ffffffb3;
+    }
+  }
+  &__login {
+    text-decoration: underline;
+    text-decoration-color: #ffffff00;
+    transition: 200ms ease-in-out;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: #ffffff;
+    }
+  }
+
+}

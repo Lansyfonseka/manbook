@@ -7,6 +7,7 @@ import { UsersPage } from './pages/Users/UsersPage';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import { MainPage } from './pages/MainPage/MainPage';
+import { Header } from './components/header/Header';
 
 function App() {
   const {userIsAuthenticated} = useContext(AuthContext);
@@ -15,18 +16,11 @@ function App() {
     <><div className="App">
       <AuthContext.Provider value={userIsAuthenticated}>
       <BrowserRouter>
-      <header className='header'>
-        <Link to="/">Main</Link>
-        <Link to="users">Users</Link>
-        <div>
-          <Link to="auth">Login</Link>|
-          <Link to="register">Register</Link>
-        </div>
-      </header>
+      <Header></Header>
       <main className='main'>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="auth" element={<AuthPage />} />
+          <Route path="login" element={<AuthPage />} />
           <Route path="register" element={<RegisterPage />} />
           {/* <Route path="users" element={userIsAuthenticated ? <UsersPage /> : <Navigate to='/auth'/>} /> */}
           <Route path="users" element={<UsersPage />} />
