@@ -1,6 +1,5 @@
-import './App.scss';
-import './normalize.scss';
-import {BrowserRouter,Routes,Route,Link,Navigate} from "react-router-dom";
+import './scss/main.scss'
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { AuthPage } from './pages/AuthPage/AuthPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 import { UsersPage } from './pages/Users/UsersPage';
@@ -8,6 +7,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Header } from './components/header/Header';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   const {userIsAuthenticated} = useContext(AuthContext);
@@ -26,6 +26,7 @@ function App() {
           <Route path="users" element={<UsersPage />} />
         </Routes>
       </main> 
+      <Footer></Footer>
       </BrowserRouter>
       </AuthContext.Provider>
     </div></>

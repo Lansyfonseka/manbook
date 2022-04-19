@@ -1,14 +1,14 @@
+@import '../../scss/variables.scss';
+
 .header {
   padding: 20px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #282c34;
-  color: #ffffff;
-  font-size: 20px;
+  background-color: $app-base-background-color;
   a {
-    font-size: 20px;
-    color: #ffffff;
+    font-size: $app-font-size-small;
+    color: $app-base-color;
   }
   .logo {
     width: 250px;
@@ -18,24 +18,113 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-  &__register {
+  .authorization__register {
     margin-left: 20px;
-    border: 1px white solid;
     padding: 5px;
-    border-radius: 5px;
-    transition: 200ms ease;
+    border: $app-base-border;
+    border-radius: $app-base-border-radius;
+    transition: $app-base-animation;
     &:hover {
-      box-shadow: 0 0 10px #ffffffb3;
+      box-shadow: $app-base-box-shadow-normal;
     }
   }
-  &__login {
+  .authorization__login {
     text-decoration: underline;
     text-decoration-color: #ffffff00;
-    transition: 200ms ease-in-out;
+    transition: $app-base-animation;
     &:hover {
       text-decoration: underline;
-      text-decoration-color: #ffffff;
+      text-decoration-color: $app-base-color;
     }
   }
+  .search {
+    position: relative;
+    width: 40vw;
+    max-width: 350px;
+    border: $app-base-border;
+    border-radius: $app-base-border-radius;
+    transition: $app-base-animation;
+    input {
+      padding: 5px;
+      width: 100%;
+      color: $app-base-color;
+      font-size: $app-font-size-small;
+      color: $app-base-color;
+      &:focus, &:hover {
+        &::placeholder {
+          color: #ffffff51;
+        }
+      } 
+      &::placeholder {
+        color: #ffffff00;
+      }
+    }
+    &::before {
+      content: '\26B2';
+      position: absolute;
+      top: -1px;
+      left: 10px;
+      color: #ffffff;
+      font-size: 32px;
+      transform: rotate(45deg);
+      transition: $app-base-animation;
+    }
+    &:hover, &:focus-within {
+      &::before {
+        left: 90%;
+      }
+    }
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &__name {
+      margin-right: $app-base-margin-padding;
+      padding: 5px 0;
+      max-width: 120px;
+      font-size: $app-font-size-small;
+      color: $app-base-color;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-decoration: underline;
+      text-decoration-color: #ffffff00;
+      transition: $app-base-animation;
+      
+    }
+    &__photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    &:hover {
+      .profile__name {
+        text-decoration: underline;
+        text-decoration-color: $app-base-color;
+      }
+    }
+  }
+}
 
+@media screen and (max-width: $app-viewport-breakpoint-medium) {
+  .header {
+    .logo {
+      width: 80px;
+      background-image: url('../../icons/logo.svg');
+      background-size: auto;
+    }
+    .search {
+      &:hover, &:focus-within {
+        &::before {
+          left: 85%;
+        }
+      }
+    }
+    .profile {
+      &__name {
+        display: none;
+      }
+    }
+  }
 }

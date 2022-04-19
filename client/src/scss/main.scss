@@ -1,0 +1,12 @@
+@import './normalize.scss';
+@import './fonts.scss';
+@import './variables.scss';
+@import './theme-dark.scss';
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

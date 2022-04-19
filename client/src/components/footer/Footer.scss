@@ -1,0 +1,25 @@
+@import '../../scss/variables.scss';
+
+.footer {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $app-base-background-color;
+  .communicate {
+    display: flex;
+    a {
+      margin: 0 10px;
+      width: 30px;
+      height: 30px;
+      background-size: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  div {
+    color: $app-base-color;
+    font-size: $app-font-size-default;
+  }
+}
