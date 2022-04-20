@@ -9,7 +9,9 @@
     "client": "npm run start --prefix client",
     "client:install": "npm install --prefix client",
     "client:build": "npm run build --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "predeploy": "npm run client:build",
+    "deploy": "gh-pages -d build --prefix client"
   },
   "repository": {
     "type": "git",

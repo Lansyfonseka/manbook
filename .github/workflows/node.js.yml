@@ -29,5 +29,5 @@ jobs:
     - run: npm i
     - run: npm run client:install
     - run: npm run client:build
-    - run: npm run server
+    - run: npm run deploy
     - run: npm test
