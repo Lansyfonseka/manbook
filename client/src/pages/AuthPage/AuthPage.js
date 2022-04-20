@@ -1,21 +1,21 @@
 import  Axios from "axios";
-import React, {useState,useContext} from "react";
+import React, {useState/*,useContext*/} from "react";
 import {useNavigate} from 'react-router-dom';
-import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext";
 import "./AuthPage.scss";
 
 export const AuthPage = () => {
   const [mail,setMail] = useState('');
   const [password,setPassword] = useState('');
-  let {userName,userMail,userId,userIsAuthenticated} = useContext(AuthContext);
+  // let {userName,userMail,userId,userIsAuthenticated} = useContext(AuthContext);
   const navigate = useNavigate();
 
   const checkUser = async () => {
     Axios.post('api/login',{userMail:mail,userPassword:password}).then(data=> {
-        userName = data.data.user_name;
-        userMail = data.data.user_mail;
-        userId = data.data.user_id;
-        userIsAuthenticated = true;
+        // userName = data.data.user_name;
+        // userMail = data.data.user_mail;
+        // userId = data.data.user_id;
+        // userIsAuthenticated = true;
         navigate('/users');
     });
   }

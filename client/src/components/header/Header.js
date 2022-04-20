@@ -12,8 +12,8 @@ export const Header = () => {
       </div> 
       {/* <Link to="users">Users</Link> */}
       <div className="authorization">
-        <Link to="login" className="authorization__login">Sign in</Link>
-        <Link to="register" className="authorization__register">Sign up</Link>
+        <Link to="/login" className="authorization__login">Sign in</Link>
+        <Link to="/register" className="authorization__register">Sign up</Link>
       </div>
       {/* <div className="profile">
         <div className="profile__name">Ryabtsev Egor</div>

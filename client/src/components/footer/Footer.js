@@ -3,7 +3,9 @@ import './Footer.scss';
 // import github from '../../icons/github-logo.svg';
 import githubLight from '../../icons/github-logo-light.svg';
 import telegram from '../../icons/telegram-logo.svg';
-import linkedin from '../../icons/linkedin-logo.svg';
+// import linkedin from '../../icons/linkedin-logo.svg';
+
+const linkedin = require('../../icons/linkedin-logo.svg').default;
 
 export const Footer = () => {
   return (
