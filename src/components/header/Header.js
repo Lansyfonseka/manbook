@@ -12,6 +12,7 @@ export const Header = () => {
       </div> 
       {/* <Link to="users">Users</Link> */}
       <div className="authorization">
+        <Link to="/users" className="authorization__login">Users   </Link>
         <Link to="/login" className="authorization__login">Sign in</Link>
         <Link to="/register" className="authorization__register">Sign up</Link>
       </div>

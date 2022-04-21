@@ -15,12 +15,7 @@ export const RegisterPage = () => {
       userMail: mail,
       userPassword: password
     });
-    // Axios.post('api/register',{
-    //   userName:name,
-    //   userMail: mail,
-    //   userPassword: password
-    // });
-    // navigate('/users');
+    navigate('/users');
   }
   return (
     <>
