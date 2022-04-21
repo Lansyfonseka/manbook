@@ -11,7 +11,7 @@ export const AuthPage = () => {
   const navigate = useNavigate();
 
   const checkUser = async () => {
-    Axios.post('api/login',{userMail:mail,userPassword:password}).then(data=> {
+    Axios.post('https://manbook-server.vercel.app/api/login',{userMail:mail,userPassword:password}).then(data=> {
         // userName = data.data.user_name;
         // userMail = data.data.user_mail;
         // userId = data.data.user_id;

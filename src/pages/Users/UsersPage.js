@@ -6,7 +6,7 @@ import { Table } from "./components/Table";
 export const UsersPage = () => {
   const [data,setData] = useState([]);
   useEffect(()=>{
-    Axios.get('api/get').then((data=>{
+    Axios.get('https://manbook-server.vercel.app/api/get').then((data=>{
       setData(data.data);
     }));
   },[])
