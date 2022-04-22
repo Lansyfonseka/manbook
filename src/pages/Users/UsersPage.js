@@ -6,9 +6,12 @@ import { Table } from "./components/Table";
 export const UsersPage = () => {
   const [data,setData] = useState([]);
   useEffect(()=>{
-    Axios.get('https://manbook-server.vercel.app/api/get').then((data=>{
-      setData(data.data);
-    }));
+    // Axios.get('https://manbook-server.vercel.app/api/get').then((data=>{
+    //   setData(data.data);
+    // }));
+    Axios.get('http://localhost:8080/api/users').then( (data) =>{
+      setData(data.data)
+    })
   },[])
   
   return ( 

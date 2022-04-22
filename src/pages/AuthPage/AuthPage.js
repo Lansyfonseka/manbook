@@ -10,14 +10,21 @@ export const AuthPage = () => {
   // let {userName,userMail,userId,userIsAuthenticated} = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const checkUser = async () => {
-    Axios.post('https://manbook-server.vercel.app/api/login',{userMail:mail,userPassword:password}).then(data=> {
+  const checkUser = async () => {       
+    Axios.post('http://localhost:8080/api/login',{
+      mail: mail,
+      password: password
+    }).catch((error)=> {
+      console.error('Login Error:',error.response.data)
+    });
+    
+    // Axios.post('https://manbook-server.vercel.app/api/login',{userMail:mail,userPassword:password}).then(data=> {
         // userName = data.data.user_name;
         // userMail = data.data.user_mail;
         // userId = data.data.user_id;
         // userIsAuthenticated = true;
-        navigate('/users');
-    });
+        // navigate('/users');
+    // });
   }
 
   return (

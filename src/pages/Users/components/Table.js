@@ -11,13 +11,20 @@ export const Table = ({title,data}) => {
       </div>
       <div className="table__body">
       {data.map(e=>(
-        <div key={e.user_id} className="table__body_row">
-          <div className="user_id">{e.user_id}</div>
+        // <div key={e.user_id} className="table__body_row">
+        <div key={e.id} className="table__body_row">
+          {/* <div className="user_id">{e.user_id}</div>
           <div className="user_name">{e.user_name}</div>
           <div className="user_mail">{e.user_mail}</div>
           <div className="user_date_register">{new Date(e.user_date_register).toLocaleString()}</div>
           <div className="user_date_login">{new Date(e.user_date_login).toLocaleString()}</div>
-          <div className="user_status">{e.user_status ? 'Active' : 'Banned'}</div>
+          <div className="user_status">{e.user_status ? 'Active' : 'Banned'}</div> */}
+          <div className="user_id">{e.id}</div>
+          <div className="user_name">{e.name}</div>
+          <div className="user_mail">{e.mail}</div>
+          <div className="user_date_register">{new Date(e.createdAt).toLocaleString()}</div>
+          <div className="user_date_login">{new Date(e.updatedAt).toLocaleString()}</div>
+          <div className="user_status">{e.active ? 'Active' : 'Banned'}</div>
         </div>)
       )}
       </div>

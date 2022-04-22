@@ -10,12 +10,17 @@ export const RegisterPage = () => {
   const navigate = useNavigate();
 
   const registerUser = async () => {
-    Axios.post('https://manbook-server.vercel.app/api/register',{
-      userName:name,
-      userMail: mail,
-      userPassword: password
+    Axios.post('http://localhost:8080/api/register',{
+      name:name,
+      mail: mail,
+      password: password
     });
-    navigate('/users');
+    // Axios.post('https://manbook-server.vercel.app/api/register',{
+    //   userName:name,
+    //   userMail: mail,
+    //   userPassword: password
+    // });
+    // navigate('/users');
   }
   return (
     <>
