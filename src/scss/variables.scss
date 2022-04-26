@@ -19,14 +19,15 @@ $app-base-margin-padding: 10px;
 
 // Background-color
 $app-base-background-color: #282c34;
+$app-second-background-color: #80808030;
 // $app-base-background-color-hover: #ffffff70;
 
 // Color
 $app-base-color: #ffffff;
 
 // Shadow
-$app-base-box-shadow-normal: 0 0 10px #ffffffb3;
-$app-base-box-shadow-low: 4px 4px 10px 0 #ffffff5d;
+$app-base-box-shadow-normal: 10px 10px 15px 0px #00000082;;
+$app-base-box-shadow-low: 2px 2px 15px 0px #00000096;
 
 // Animation
 $app-base-animation: 200ms ease-in-out;

@@ -1,0 +1,84 @@
+@import '../../scss/variables.scss';
+
+.photoCard {
+  font-family: cursive;
+  margin: auto;
+  padding: $app-base-margin-padding;
+  width: 250px;
+  box-shadow: $app-base-box-shadow-low;
+  border-radius: $app-base-border-radius;
+  background-color: #ffffff;
+  transition: $app-base-animation;
+  &:hover {
+    box-shadow: $app-base-box-shadow-normal;
+    transform: scale(1.2);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    transition: $app-base-animation;
+    &:hover {
+      border-radius: 50px;
+      background-color: #ababab36;
+    }
+    &_img {
+      display: block;      
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    &_name {
+      margin-left: $app-base-margin-padding;
+      font-size: $app-font-size-small;
+    }
+  }
+  &__item {
+    margin: 10px 0;
+    width: 100%;
+    height: 200px;
+    background-color: #a6a6a6;
+  }
+  &__tools {
+    display: flex;
+    margin-bottom: $app-base-margin-padding;
+    svg {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      transition: $app-base-animation;
+    }
+    &_like {
+      margin-right: 10px;
+      .fullHearth {
+        fill: #ff0000;
+      }
+    }
+    div {
+      display: flex;
+      span {
+        font-size: 20px;
+      }
+    }    
+  }
+  &__tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    span {
+      margin-right: 5px;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: $app-font-size-small;
+      background-color: #8080806a;
+      transition: $app-base-animation;
+      cursor: pointer;
+      &:hover {
+        background-color: #808080c0;
+      }
+    }
+  }
+}
