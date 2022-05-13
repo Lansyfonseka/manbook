@@ -1,0 +1,96 @@
+@import '../../scss/variables.scss';
+
+.book {
+  z-index: 1;
+  perspective:3000px;
+  position: relative;
+  width: 400px;
+  height: 550px;
+  border-radius: 2px 4px 4px 2px;
+  background: linear-gradient(270deg, #e8e5ea 83%, #9d9d9d 100%);
+  box-shadow: 13px 13px 8px 0px #97929999;
+  color: $app-base-color;
+  font-family: cursive;
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  &:hover {
+    transform: rotateY(40deg) rotateX(15deg);
+  }
+  .front, .left-side {
+    position: absolute;
+  }
+  .front {
+    height: 100%;
+    width: 100%;
+    box-shadow: 10px 0px 10px 0px #4e4e4ea8;
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transition: transform .5s;
+    transform: translate3d(0,0,40px);
+    z-index: 10;
+    .coverFront {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px 0 25px;
+      width: 100%;
+      height: 100%;
+      border-radius: 0 3px 3px 0;
+      box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, #795548 80%, #64463b 100%);
+      backface-visibility: hidden;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10px;
+        bottom: 0;
+        width: 3px;
+        background: #0000001a;
+        box-shadow: 1px 0 3px #ffffff1a;
+      }
+      .book__name {
+        margin: 20px 0;
+        font-size: $app-font-size-large;
+      }
+      .book_photo {
+        width: 100%;
+      }
+    }
+    .coverBack {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      background: linear-gradient(99deg, #795548 56%, #5c3123 100%);
+    }
+  }
+}
+.left-side{
+  width: 40px;
+  left: -20px;
+  height: 100%;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  font-size: $app-font-size-medium;
+  background-color: #624033;
+  writing-mode: vertical-rl;
+  transform: rotateY(90deg) rotateX(180deg) translateX(-20px);
+}
+.active {
+  &:hover {
+    transform: initial;      
+  }
+  .front {
+    transform: translate3d(2px, 0, 40px) rotateY(-120deg)
+  }
+  .left-side {
+    transition-delay: .2s;
+    background-color: #949395;
+  }
+}

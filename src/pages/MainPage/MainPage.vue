@@ -1,9 +1,27 @@
-import React from "react";
-import { PhotoCard } from "../../components/photoCard/PhotoCard";
-import './MainPage.scss';
+<template>
+  <h1 className="welcome" >Welcome to ManBook!</h1>
+  <div class="items">
+    <PhotoCard 
+      v-for="item in items"
+      :key="item.user"
+      :user="item.user"
+      :userPhoto="item.userPhoto"
+      :item="item.item"
+      :likes="item.likes"
+      :comments="item.comments"
+    />
+  </div>  
+  <div class="books">
+    <CollectionBook />
+    <CollectionBook />
+  </div>
+</template>
 
-export const MainPage = () => {
-  const items = [
+<script>
+import './MainPage.scss';
+import PhotoCard from '../../components/PhotoCard/PhotoCard.vue';
+import CollectionBook from '../../components/CollectionBook/CollectionBook.vue';
+const items = [
     {
       user: 'Tay Loo',
       userPhoto: 'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg',
@@ -39,27 +57,18 @@ export const MainPage = () => {
       likes: 5,
       comments: 2
     }
-  ]
-  return (
-    <>
-    <h1 className="welcome" >Welcome to ManBook!</h1>
-    <div className="items">
-      {items.map(e => <PhotoCard
-                        key={e.user} 
-                        user={e.user}
-                        userPhoto={e.userPhoto}
-                        item={e.item}
-                        likes={e.likes}
-                        comments={e.comments}
-                      ></PhotoCard>)}
-    </div>
-    {/* <PhotoCard 
-      user={'Lansy T'} 
-      userPhoto={'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80'}
-      item={'https://i.etsystatic.com/16703341/r/il/a07e61/1841274122/il_fullxfull.1841274122_55wj.jpg'}
-      likes={3}
-      comments={5}
-    ></PhotoCard> */}
-    </>
-  )
+  ];
+
+export default {
+  name: "MainPage",
+  components: {
+    PhotoCard,
+    CollectionBook
+  },
+  data() {
+    return {
+      items: items
+    }
+  }
 }
+</script>
