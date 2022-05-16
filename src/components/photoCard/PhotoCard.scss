@@ -11,28 +11,36 @@
   transition: $app-base-animation;
   &:hover {
     box-shadow: $app-base-box-shadow-normal;
-    transform: scale(1.2);
   }
   &__header {
-    display: flex;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
     align-items: center;
-    cursor: pointer;
-    
+    justify-items: center;
+    direction: rtl;
+    overflow: hidden;
+    cursor: pointer;    
     transition: $app-base-animation;
+
     &:hover {
+      width: 100%;
       border-radius: 50px;
       background-color: #ababab36;
     }
     &_img {
-      display: block;      
       width: 50px;
       height: 50px;
       border-radius: 50%;
+      background-size: cover;
+      background-position: center;
       object-fit: cover;
     }
     &_name {
-      margin-left: $app-base-margin-padding;
       font-size: $app-font-size-small;
+      white-space: nowrap;
     }
   }
   &__item {

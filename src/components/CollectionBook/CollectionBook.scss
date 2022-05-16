@@ -16,10 +16,17 @@
   &:hover {
     transform: rotateY(40deg) rotateX(15deg);
   }
-  .front, .left-side {
-    position: absolute;
+  .collection-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: $app-font-size-large;
+    color: #000000;
   }
-  .front {
+  &__front {
+    position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     box-shadow: 10px 0px 10px 0px #4e4e4ea8;
@@ -28,7 +35,7 @@
     transition: transform .5s;
     transform: translate3d(0,0,40px);
     z-index: 10;
-    .coverFront {
+    &_cover {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -50,46 +57,47 @@
         background: #0000001a;
         box-shadow: 1px 0 3px #ffffff1a;
       }
-      .book__name {
+      .collection-title {
         margin: 20px 0;
         font-size: $app-font-size-large;
       }
-      .book_photo {
+      .collection-photo {
         width: 100%;
       }
     }
-    .coverBack {
+    &_back {
       position: absolute;
+      top: 0;
       width: 100%;
       height: 100%;
-      top: 0;
-      right: 0;
       backface-visibility: hidden;
       transform: rotateY(180deg);
       background: linear-gradient(99deg, #795548 56%, #5c3123 100%);
     }
   }
-}
-.left-side{
-  width: 40px;
-  left: -20px;
-  height: 100%;
-  padding-top: 20px;
-  display: flex;
-  align-items: center;
-  font-size: $app-font-size-medium;
-  background-color: #624033;
-  writing-mode: vertical-rl;
-  transform: rotateY(90deg) rotateX(180deg) translateX(-20px);
+  &__left-side{
+    position: absolute;
+    top: 0;
+    width: 40px;
+    left: -20px;
+    height: 100%;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    font-size: $app-font-size-medium;
+    background-color: #624033;
+    writing-mode: vertical-rl;
+    transform: rotateY(90deg) rotateX(180deg) translateX(-20px);
+  }
 }
 .active {
   &:hover {
     transform: initial;      
   }
-  .front {
+  .book__front {
     transform: translate3d(2px, 0, 40px) rotateY(-120deg)
   }
-  .left-side {
+  .book__left-side {
     transition-delay: .2s;
     background-color: #949395;
   }
