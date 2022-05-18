@@ -8,6 +8,7 @@
               id="name"
               type="text"
               name="name"
+              v-model="userName"
             />
             <label htmlFor="name">Name</label>
           </div>
@@ -17,6 +18,7 @@
               id="email"
               type="text"
               name="email"
+              v-model="userMail"
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -26,13 +28,12 @@
               id="password"
               type="password"
               name="password"
+              v-model="userPassword"
             />
             <label htmlFor="password">Password</label>
           </div>
         </div>
-        <button 
-          className="registration__button"
-        >
+        <button className="registration__button" @click="registerUser">
           Register
         </button>
       </div>
@@ -40,8 +41,26 @@
 
 <script>
 import './RegisterPage.scss';
+import Axios from 'axios'
 
 export default {
-  name: "RegisterPage"
+  name: "RegisterPage",
+  data () {
+    return {
+      userName: null,
+      userMail: null,
+      userPassword: null
+    }
+  },
+  methods: {
+    async registerUser() {
+      await Axios.post('http://localhost:5000/api/register',{
+        name: this.userName,
+        mail: this.userMail,
+        password: this.userPassword
+      });
+      this.$router.push({path: '/'})
+    }
+  }
 }
 </script>

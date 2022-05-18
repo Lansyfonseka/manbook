@@ -1,11 +1,15 @@
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 import MainPage from "../pages/MainPage/MainPage"
 import RegisterPage from "../pages/RegisterPage/RegisterPage"
 import AuthPage from "../pages/AuthPage/AuthPage"
 import Users from "../pages/Users/Users"
+import CollectionPage from "../pages/CollectionPage/CollectionPage"
 
+createWebHistory;
 export default createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
+  mode: "history",
   routes: [
     {
       path: '/',
@@ -22,6 +26,11 @@ export default createRouter({
     {
       path: '/users',
       component: Users
+    },
+    {
+      path: '/collection/:id',
+      name: 'collection',
+      component: CollectionPage
     }
   ]
 })

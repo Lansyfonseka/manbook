@@ -19,10 +19,22 @@
   .collection-description {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
     height: 100%;
     font-size: $app-font-size-large;
     color: #000000;
+    &__link {
+      margin: 5px;
+      align-self: flex-end;
+      font-size: $app-font-size-small;
+      color: #00000082;
+      transition: $app-base-animation;
+      &:hover {
+        color: #000000;
+      }
+    }
   }
   &__front {
     position: absolute;
@@ -60,6 +72,7 @@
       .collection-title {
         margin: 20px 0;
         font-size: $app-font-size-large;
+        text-align: center;
       }
       .collection-photo {
         width: 100%;
