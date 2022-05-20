@@ -1,0 +1,24 @@
+@import '../../scss/variables.scss';
+
+.user-menu {
+  position: absolute;
+  padding: 0 20px;
+  right: 100px;
+  top: 100px;
+  background-color: $app-base-background-color;
+  backdrop-filter: blur(1px);
+  box-shadow: $app-base-box-shadow-low;
+  z-index: 5;
+  &__item {
+    margin: 10px 0;
+    font-size: $app-font-size-small;
+    color: $app-base-color;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: $app-base-animation;
+    cursor: pointer;
+    &:hover {
+      text-decoration-color: $app-base-color;
+    }
+  }
+}

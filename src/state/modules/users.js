@@ -41,6 +41,7 @@ const state = {
 const getters = {
   USERS: state => {return state.users}
 };
+
 const mutations = {};
 const actions = {};
 

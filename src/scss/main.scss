@@ -12,3 +12,13 @@
   font-family: sans-serif;
   background-color: $app-second-background-color;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: $app-base-animation;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

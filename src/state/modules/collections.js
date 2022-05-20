@@ -21,6 +21,7 @@ const getters = {
   COLLECTIONS: state => {return state.collections},
   COLLECTION: state => id => {return state.collections.find(e => e.id === id)}
 };
+
 const mutations = {};
 const actions = {};
 

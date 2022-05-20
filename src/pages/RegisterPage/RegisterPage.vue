@@ -54,12 +54,18 @@ export default {
   },
   methods: {
     async registerUser() {
-      await Axios.post('http://localhost:5000/api/register',{
-        name: this.userName,
-        mail: this.userMail,
-        password: this.userPassword
-      });
-      this.$router.push({path: '/'})
+      try {
+        await Axios.post('http://localhost:5000/api/register',{
+          name: this.userName,
+          mail: this.userMail,
+          password: this.userPassword
+        });
+        console.log(this.$store)
+        this.$router.push({path: '/'})
+      }
+      catch (error) {
+        console.log(error);
+      }
     }
   }
 }
