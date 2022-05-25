@@ -4,6 +4,7 @@ import RegisterPage from "../pages/RegisterPage/RegisterPage"
 import AuthPage from "../pages/AuthPage/AuthPage"
 import Users from "../pages/Users/Users"
 import CollectionPage from "../pages/CollectionPage/CollectionPage"
+import CreateCollection from "../pages/CreateCollection/CreateCollection";
 
 createWebHistory;
 export default createRouter({
@@ -29,8 +30,11 @@ export default createRouter({
     },
     {
       path: '/collection/:id',
-      name: 'collection',
       component: CollectionPage
+    },
+    {
+      path: '/create/collection',
+      component: CreateCollection
     }
   ]
 })

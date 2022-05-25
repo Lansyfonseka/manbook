@@ -9,11 +9,16 @@ import Axios from 'axios'
 export default {
   name: "AllUsers",
   mounted() {
-  this.$nextTick(async function () {
-    Axios.get('https://manbook-server-v2-nlrk0yi4d-lansyfonseka.vercel.app/api/users').then( (data) =>{
-      console.log(data.data);
+    const token = this.$store.getters.USER_TOKEN;
+    this.$nextTick(async function () {
+      Axios.get('http://localhost:5000/api/users', {
+        headers: {
+          authorization: token ? "Bearer "+token : ""
+        }
+      }).then( (data) =>{
+        console.log(data.data);
+      })
     })
-  })
-} 
+  } 
 }
 </script>

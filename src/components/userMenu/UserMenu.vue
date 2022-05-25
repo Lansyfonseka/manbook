@@ -1,9 +1,6 @@
 <template>
   <div 
-    class="user-menu" 
-    :class="{active: active}"
-    @click.stop="closeUserMenu"
-  >
+    class="user-menu">
     <div class="user-menu__item">My collections</div>
     <div class="user-menu__item">Favorites</div>
     <div class="user-menu__item">Setting</div>
@@ -15,17 +12,11 @@
 import './UserMenu.scss'
 
 export default {
-  props: {
-    active: Boolean
-  },
   emits: ['hideMenu'],
   methods: {
     logOut() {
+      this.$emit('hideMenu');
       this.$store.commit('logOut');
-    },    
-    closeUserMenu() {
-      console.log('hideMenu');
-      this.$emit('hideMenu')
     }
   }
 }

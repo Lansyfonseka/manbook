@@ -1,0 +1,15 @@
+@import '../../../scss/variables.scss';
+
+.custom-field-container {
+  margin: $app-base-margin-padding 0;
+  select, input {
+    padding: 5px;
+    border: 1px solid $app-base-background-color;
+    border-radius: $app-base-border-radius;
+    font-size: $app-font-size-small;
+    background-color: transparent;
+  }
+  input {
+    margin-left: $app-base-margin-padding;
+  }
+}

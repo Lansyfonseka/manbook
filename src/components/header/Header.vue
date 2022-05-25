@@ -18,13 +18,13 @@
       <div 
         className="profile" 
         v-else
-        @click="changeMenu"
-        @hide-menu="hideMenu"
+        @click="changeUserMenu"
+        @hide-menu="hideUserMenu"
       >
         <div className="profile__name">{{USER_INFO.name}}</div>
         <img src="https://avatars.githubusercontent.com/u/45271624?v=4" alt="profile" className="profile__photo"/>
         <transition name="fade">
-          <UserMenu v-show="showUserMenu" :active="showUserMenu"/>
+          <UserMenu v-show="showUserMenu"/>
         </transition>
       </div>
             
@@ -44,12 +44,11 @@ export default {
     }
   },
   methods: {
-    changeMenu() {
-      console.log('change');
-      this.showUserMenu = !this.showUserMenu
+    changeUserMenu() {
+      this.showUserMenu = !this.showUserMenu;
     },
-    hideMenu() {
-      console.log('hide')
+    hideUserMenu() {
+      this.showUserMenu = false;
     }
   },
   computed: {
