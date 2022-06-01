@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+button {
+  padding: 5px $app-base-margin-padding;
+  border: 1px solid $app-base-background-color;
+  width: fit-content;
+  border-radius: $app-base-border-radius;
+  transition: $app-base-animation;  
+}
+
+.button-container-right {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-good:hover {
+  color: $app-button-color-good;
+  border-color: $app-button-color-good;
+}
+.button-bad:hover  {
+  color: $app-button-color-bad;
+  border-color: $app-button-color-bad;
+}

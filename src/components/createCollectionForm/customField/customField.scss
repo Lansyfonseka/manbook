@@ -2,14 +2,19 @@
 
 .custom-field-container {
   margin: $app-base-margin-padding 0;
+  display: flex;
+  justify-content: space-between;
   select, input {
-    padding: 5px;
-    border: 1px solid $app-base-background-color;
-    border-radius: $app-base-border-radius;
     font-size: $app-font-size-small;
     background-color: transparent;
   }
+  select {
+    cursor: pointer;
+  }
   input {
     margin-left: $app-base-margin-padding;
+  }
+  &__delete {
+    font-size: $app-font-size-small;
   }
 }

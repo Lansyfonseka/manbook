@@ -3,16 +3,9 @@
 .new-book {
   max-width: 720px;
   margin: auto;
-  .main-information { 
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr;
-    gap: 5px;
+  &__main-information {
     font-size: $app-font-size-medium;
     input, textarea {
-      padding: 5px;
-      border: 1px solid $app-base-background-color;
-      border-radius: $app-base-border-radius;
       font-size: $app-font-size-small;
     }
     textarea {
@@ -21,25 +14,20 @@
     }
   }
 
-  .additional-information {
+  &__additional-information {
     &_add-field {
-      padding: 5px;
-      border: 1px solid $app-base-background-color;
-      width: fit-content;
-      border-radius: $app-base-border-radius;
       font-size: $app-font-size-medium;
-      transition: $app-base-animation;
-      cursor: pointer;
-      &:hover {
-        border-color: #19a900;
-        color: #19a900;
-      }
     }
   }
-
-  hr {
-    margin: 20px auto;
-    height: 1px;
-    background-image: linear-gradient(to right, #ffffff00, $app-base-background-color, #ffffff00);
-  }
+  .new-book__save {
+    padding: 5px $app-base-margin-padding;
+    border: 1px solid $app-base-background-color;
+    border-radius: $app-base-border-radius;
+    font-size: $app-font-size-medium;
+    transition: $app-base-animation;
+    cursor: pointer;
+    &:hover {
+      background-color: $app-button-color-good;
+    }    
+  }  
 }

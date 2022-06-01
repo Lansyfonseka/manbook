@@ -1,0 +1,6 @@
+.grid-container-two-colums {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  gap: 5px;
+}

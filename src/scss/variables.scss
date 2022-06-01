@@ -7,7 +7,7 @@ $app-font-family-ru: cursive;
 // Fonts-sizes
 $app-font-size-large: 3rem;
 $app-font-size-medium: 2rem;
-$app-font-size-small: 1.2rem;
+$app-font-size-small: 1.3rem;
 $app-font-size-default: 1rem;
 
 // Border
@@ -24,6 +24,8 @@ $app-second-background-color: #80808030;
 
 // Color
 $app-base-color: #ffffff;
+$app-button-color-good: #19a900;
+$app-button-color-bad: #d83734;
 
 // Shadow
 $app-base-box-shadow-normal: 10px 10px 15px 0px #00000082;;
@@ -33,6 +35,6 @@ $app-base-box-shadow-low: 2px 2px 15px 0px #00000096;
 $app-base-animation: 200ms ease-in-out;
 
 // Viewport breakpoint
-$app-viewport-breakpoint-large: 1024px;
+$app-viewport-breakpoint-large: 1200px;
 $app-viewport-breakpoint-medium: 920px;
 $app-viewport-breakpoint-small: 620px;

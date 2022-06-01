@@ -1,0 +1,20 @@
+@import '../../scss/variables.scss';
+
+.container.settings {
+  max-width: 720px;
+  h3 {
+    font-size: $app-font-size-large;
+  }
+  .grid-container-two-colums {
+    gap: 25px;
+  }
+  .settings__info, .settings__password {
+    font-size: $app-font-size-medium;
+    input {
+      font-size: $app-font-size-small;
+    }
+    &_save {
+      font-size: $app-font-size-medium;
+    }
+  }
+}

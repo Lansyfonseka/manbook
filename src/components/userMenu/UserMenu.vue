@@ -3,7 +3,9 @@
     class="user-menu">
     <div class="user-menu__item">My collections</div>
     <div class="user-menu__item">Favorites</div>
-    <div class="user-menu__item">Setting</div>
+    <router-link :to="{path: '/settings'}" class="user-menu__item">
+      Settings
+    </router-link>
     <div class="user-menu__item" @click.stop="logOut">Log out</div>
   </div>
 </template>

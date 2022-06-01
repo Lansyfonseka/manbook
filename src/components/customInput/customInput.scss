@@ -1,0 +1,42 @@
+@import '../../scss/variables.scss';
+
+.custom-input {
+  position: relative;
+  padding-top: 15px;
+  &__input {
+    padding: 7px 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid $app-base-background-color;
+    font-size: 1.3rem;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .custom-input__label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 20px;
+    }
+
+    &:focus {
+      border-image: linear-gradient(to right, #11998e, #38ef7d);
+      border-image-slice: 1;
+      ~ .custom-input__label {
+        top: 0;
+        font-size: 1rem;
+        font-weight:700;
+        color: #11998e;
+      }
+    } 
+  }
+  &__label {
+    position: absolute;
+    display: block;
+    top: 0;
+    font-size: 1rem;
+    transition: $app-base-animation;
+    color: $app-base-background-color;
+  }  
+}

@@ -2,6 +2,9 @@
 @import './fonts.scss';
 @import './variables.scss';
 @import './theme-dark.scss';
+@import './input.scss';
+@import './button.scss';
+@import './grid.scss';
 
 #app {
   min-height: 100vh;
@@ -21,4 +24,15 @@
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.cute-line {
+  margin: 20px auto;
+  height: 1px;
+  background-image: linear-gradient(to right, #ffffff00, $app-base-background-color, #ffffff00);
+}
+
+.container {
+  margin: auto;
+  max-width: $app-viewport-breakpoint-large;
 }
